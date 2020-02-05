@@ -1,3 +1,14 @@
+# IDE
+.idea
+
+# Build
+lambda_function.zip
+
+
+#######################################################
+
+# GITHUB DEFAULT NODEJS GITIGNORE:
+
 # Logs
 logs
 *.log
