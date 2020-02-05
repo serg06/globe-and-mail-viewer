@@ -1,0 +1,7 @@
+{
+  "name": "webstorm",
+  "version": "1.0.0",
+  "dependencies": {
+    "htmlparser2": "^4.0.0"
+  }
+}
