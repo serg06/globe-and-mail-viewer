@@ -76,9 +76,9 @@ exports.handler = async (event, context) => {
         statusCode: 200,
         headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://serg06.github.io',
-            'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers': 'Content-Type'
+            'Access-Control-Allow-Origin': 'https://serg06.github.io', // only from my repo
+            'Access-Control-Allow-Methods': 'GET',                     // only GET
+            'Access-Control-Allow-Headers': 'Content-Type'             // only Content-Type
         },
         body: "Server error: Server forgot to update body somehow."
     };
@@ -86,19 +86,27 @@ exports.handler = async (event, context) => {
     let get_params = event.queryStringParameters;
     console.log(`GET params: ${JSON.stringify(get_params)}`);
 
-    // TODO: make sure it's GET (just disable anything but GET in AWS)
-
     let globeurl = get_params.globeurl;
     console.log("globe url: " + globeurl);
 
+    // make sure globeurl exists
     if (!globeurl) {
-        console.log(`invalid globeurl: '${globeurl}'`);
-        result.body = JSON.stringify({"error": `invalid globeurl: '${globeurl}'`});
+        let err = `invalid globeurl - missing?: '${globeurl}'`;
+        console.log(err);
+        result.body = JSON.stringify({"error": err});
         return result;
     }
 
-    // TODO: validate globeurl with regex
-    // TODO: CORS only allow my github url
+    // make sure globeurl is valid and points to globeandmail
+    let url_obj = new URL(globeurl);
+    let valid = !!url_obj.hostname.match(/(^theglobeandmail.com$)|(.theglobeandmail.com$)/);
+
+    if (!valid) {
+        let err = `invalid globeurl - matching failed: '${globeurl}'`;
+        console.log(err);
+        result.body = JSON.stringify({"error": err});
+        return result;
+    }
 
     const [parser, paragraphs] = setup_parser();
 
