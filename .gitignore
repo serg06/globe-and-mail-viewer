@@ -2,7 +2,7 @@
 .idea
 
 # Build
-lambda_function.zip
+*.zip
 
 # Personal testing file
 backend_test.js
