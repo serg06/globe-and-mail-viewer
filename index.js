@@ -32,7 +32,7 @@ function fill_article(url) {
             if (json.article) {
                 let article = '';
                 for (const line of json.article) {
-                    article += '<p>' + line + '</p>';
+                    article += `<p>${line}</p>`;
                 }
                 set_article_html(article);
             } else if (json.error) {
@@ -58,6 +58,3 @@ window.onload = () => {
         fill_article(url);
     }
 };
-
-
-
