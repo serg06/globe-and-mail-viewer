@@ -1,5 +1,5 @@
 let exampleurl = 'https://www.theglobeandmail.com/business/economy/article-ontario-posts-record-year-for-job-creation-but-toronto-dominates/';
-let awsurl = 'https://urlfacio2h.execute-api.us-east-2.amazonaws.com/default/getglobe';
+let awsurl = 'https://urlfacio2h.execute-api.us-east-2.amazonaws.com/getglobe';
 let article_css_selector = '#article';
 let input_url_css_selector = '#input_url';
 let btn_fetch_article_css_selector = '#btn_fetch_article';
