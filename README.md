@@ -20,7 +20,6 @@ Site setup:
 
 - Fork my repo
 - Enable Github Pages using the master branch and the Jekyll Time Machine theme
-- Fix the URL in README.md
 
 AWS Lambda setup:
 
@@ -31,6 +30,7 @@ AWS Lambda setup:
 Repo setup:
 
 - Clone repo.
+- Fix the site URL in README.md
 - In the cloned repo, run `npm install`.
 - In [lambda_function.js](/lambda_function.js), change the CORS allowed origin URL to your own github.io URL.
 
