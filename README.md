@@ -8,7 +8,7 @@ Site: https://serg06.github.io/globe-and-mail-viewer/
 
 # How it works
 
-[index.html](/index.html) and [index.js](/index.js) store the website's code. It's just a static page that sends over the Globe and Mail article URL to my AWS Lambda function, gets back all the paragraphs from the article, and displays them.
+[index.html](/index.html) and [index.js](/index.js) store the website's code. It's just a static page that sends over the Globe and Mail article URL to the AWS Lambda function, gets back all the paragraphs from the article, and displays them.
 
 [lambda_function.js](/lambda_function.js) is the function running on AWS Lambda. It validates the URL, gets the article at the URL, then efficiently parses it to extract the article text.
 
