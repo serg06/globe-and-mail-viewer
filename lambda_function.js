@@ -75,12 +75,9 @@ exports.handler = async (event, context) => {
     let result = {
         statusCode: 200,
         headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://serg06.github.io', // only from my repo
-            'Access-Control-Allow-Methods': 'GET',                     // only GET
-            'Access-Control-Allow-Headers': 'Content-Type'             // only Content-Type
+            'Content-Type': 'application/json'
         },
-        body: "Server error: Server forgot to update body somehow."
+        body: JSON.stringify({"error": "Server error: Server forgot to update body somehow."})
     };
 
     let get_params = event.queryStringParameters;
